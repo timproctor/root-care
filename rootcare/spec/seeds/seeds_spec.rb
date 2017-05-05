@@ -1,8 +1,9 @@
 require "rails_helper"
 
-descibe "seeds" do
+describe "seeds" do
   before do
-    
+    byebug
+
   end
   it "creates a driver given driver command" do
 
