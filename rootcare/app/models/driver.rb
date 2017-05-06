@@ -1,4 +1,4 @@
 class Driver < ApplicationRecord
-  has_many :trips, through: :dirt, source: :driver
+  has_many :dirts
   validates :name, presence: true
 end

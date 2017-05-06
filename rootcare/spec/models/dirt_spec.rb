@@ -1,16 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe Dirt, type: :model do
-  it "has a name" do
-    dirt = Dirt.create(dirt_attributes(name: ''))
+
+  before do
+    driver = Driver.create!(driver_attributes)
+  end
+
+  it "has an associated driver" do
+    dirt = driver.dirts.create(dirt_attributes(name: driver.name))
 
     dirt.valid?
 
-    expect(dirt.errors[:name].any?).to eq(true)
+    expect(dirt.errors[:name].any?).not_to eq(true)
   end
 
   it "has a starting time" do
-    dirt = Dirt.create(dirt_attributes(start_time: ''))
+    dirt = driver.dirts.create(dirt_attributes(start_time: ''))
 
     dirt.valid?
 
@@ -18,7 +23,7 @@ RSpec.describe Dirt, type: :model do
   end
 
   it "has an ending time" do
-    dirt = Dirt.create(dirt_attributes(end_time: ''))
+    dirt = driver.dirts.create(dirt_attributes(end_time: ''))
 
     dirt.valid?
 
@@ -26,7 +31,7 @@ RSpec.describe Dirt, type: :model do
   end
 
   it "has a distance" do
-    dirt = Dirt.create(dirt_attributes(distance: ''))
+    dirt = driver.dirts.create(dirt_attributes(distance: ''))
 
     dirt.valid?
 
