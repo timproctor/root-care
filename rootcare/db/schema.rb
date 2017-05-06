@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170506014018) do
+ActiveRecord::Schema.define(version: 20170506020747) do
+
+  create_table "dirts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "start_time"
+    t.string   "end_time"
+    t.string   "distance"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "drivers", force: :cascade do |t|
     t.string   "name"
