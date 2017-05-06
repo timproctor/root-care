@@ -7,11 +7,12 @@ def seed_data
                       entry.split
                     end
 
-  seed_data.each do |entry|
+  data = {}
+  data_formatted.each do |entry|
     if entry[0] == "driver"
+      byebug
       Driver.create!(name: entry[1])
     else
-      Dirt.create!(name: entry[1], start: entry[2], end: entry[3], distance: entry[4])
     end
   end
 end
