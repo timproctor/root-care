@@ -5,6 +5,5 @@ RSpec.describe "file" do
     seed_data
   end
   it "reads mock data file" do
-    expect(seed_data[0][1]).to eq("rex")
   end
 end

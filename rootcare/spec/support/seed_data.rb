@@ -3,16 +3,7 @@ def seed_data
     datafile.readlines
   end
 
-  data_formatted = data_lines[0].split(/\r/).map do |entry|
-                      entry.split
-                    end
+  byebug
+  
 
-  data = {}
-  data_formatted.each do |entry|
-    if entry[0] == "driver"
-      byebug
-      Driver.create!(name: entry[1])
-    else
-    end
-  end
 end
