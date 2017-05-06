@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Driver, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "has a unique name" do
+    driver = Driver.create!(driver_attributes(name: ''))
+
+    driver.valid?
+
+    expect(driver.errors[:title].any?).to eq(true)
+  end
 end
