@@ -6,7 +6,7 @@ RSpec.describe DriversController, type: :controller do
   end
 
   it "can navigate to new" do
-  get :new, params: { name: driver }
+  get :new, params: { name: driver.id }
 
   expect(response).to redirect_to(new_session_url)
 end
