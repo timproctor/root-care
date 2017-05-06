@@ -1,5 +1,5 @@
 class DirtsController < ApplicationController
   def new
-    @trip = @driver.trips.new
+    @dirt = @driver.trips.new
   end
 end
