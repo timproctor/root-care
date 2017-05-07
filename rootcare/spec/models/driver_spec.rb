@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Driver, type: :model do
 
-  it "has a name" do
+  it "has a unique name" do
     driver = Driver.create(driver_attributes(name: ''))
 
     driver.valid?
