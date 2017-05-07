@@ -11,19 +11,14 @@ RSpec.describe Driver, type: :model do
   end
 
   it "it has many trips" do
-    user = User.new(user_attributes)
-    movie1 = Movie.new(movie_attributes(title: "Iron Man"))
-    movie2 = Movie.new(movie_attributes(title: "Superman"))
+    driver = Driver.create!(driver_attributes)
+    trip1 = driver.dirts.new(dirt_attributes)
+    trip1.save!
 
-    review1 = movie1.reviews.new(stars: 5, comment: "Awesome!", user_id: user.id)
-    review1.user = user
-    review1.save!
+    trip2 = driver.dirts.new(dirt_attributes)
+    trip2.save!
 
-    review2 = movie2.reviews.new(stars: 1, comment: "what? sucked.")
-    review2.user = user
-    review2.save!
-
-    expect(user.reviews).to include(review1)
-    expect(user.reviews).to include(review2)
+    expect(driver.dirts).to include(trip1)
+    expect(driver.dirts).to include(trip2)
   end
 end
