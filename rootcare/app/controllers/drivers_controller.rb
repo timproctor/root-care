@@ -10,8 +10,7 @@ class DriversController < ApplicationController
 
 private
 
-def driver_params
-    params.require(:driver).
-      permit(:name)
+  def driver_params
+    params.require(:driver).permit(:name)
   end
 end

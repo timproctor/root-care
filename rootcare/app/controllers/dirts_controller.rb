@@ -1,10 +1,11 @@
 class DirtsController < ApplicationController
   def new
-    @dirt = @driver.dirts.new
+    @trip = Dirt.new
+    @driver_id = Driver.find_by(name: "ben").id
   end
 
   def create
-    @dirt = @driver.dirts.new(dirt_params)
+    @trip = Driver.dirts.new(dirt_params)
     @dirt.save
   end
 
@@ -13,4 +14,6 @@ private
   def dirt_params
     params.require(:dirt).permit(:name, :start_time, :end_time, :distance)
   end
+
+
 end
