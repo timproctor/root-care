@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170507034709) do
+ActiveRecord::Schema.define(version: 20170507035231) do
 
   create_table "dirts", force: :cascade do |t|
     t.string   "start_time"
@@ -18,8 +18,9 @@ ActiveRecord::Schema.define(version: 20170507034709) do
     t.string   "distance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "driver_id"
     t.string   "name"
+    t.integer  "driver_id"
+    t.index ["driver_id"], name: "index_dirts_on_driver_id"
   end
 
   create_table "drivers", force: :cascade do |t|
