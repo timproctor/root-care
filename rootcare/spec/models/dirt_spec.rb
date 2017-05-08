@@ -30,6 +30,12 @@ RSpec.describe Dirt, type: :model do
     expect(dirt.errors[:distance].any?).to eq(true)
   end
 
+  it "can calculate change in time" do
+    seed_data
+    byebug
+    
+  end
+
 
 
 end
