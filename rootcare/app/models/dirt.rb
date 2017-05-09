@@ -11,7 +11,7 @@ class Dirt < ApplicationRecord
     distance = distance.to_f
     change_in_time = change_in_time(start_time, end_time)
 
-    (distance / change_in_time * 3600).to_f.ceil
+    (distance / change_in_time * 3600).round
   end
 
 private
