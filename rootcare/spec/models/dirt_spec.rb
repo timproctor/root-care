@@ -45,8 +45,7 @@ RSpec.describe Dirt, type: :model do
   it "can calculate #speed" do
     driver = Driver.create!(driver_attributes(name: "dan"))
     trip   = Dirt.create!(dirt_attributes(name: driver.name,
-                          start_time: "07:15", end_time: "07:45",
-                          distance: "17.3"))
+                        start_time: "07:15", end_time: "07:45", distance: "17.3"))
     start_time = trip.start_time
     end_time   = trip.end_time
     distance   = trip.distance
@@ -54,6 +53,20 @@ RSpec.describe Dirt, type: :model do
     mph = trip.speed(distance, start_time, end_time)
 
     expect(mph).to eq(35)
+  end
+
+  it "finds #total_trip_miles for a driver" do
+    driver = Driver.create!(driver_attributes(name: "dan"))
+    trip1  = Dirt.create!(dirt_attributes(name: driver.name,
+                      start_time: "07:15", end_time: "07:45", distance: "17.3"))
+    trip2  = Dirt.create!(dirt_attributes(name: driver.name, start_time: "06:12",
+                      end_time: "06:32", distance: "21.8"))
+    total_trip_miles = driver.total_trip_miles
+    expect(total_trip_miles).to eq(39)
+  end
+
+  xit "finds #average_speed for a driver" do
+
   end
 
 
