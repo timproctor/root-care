@@ -7,6 +7,10 @@ class Dirt < ApplicationRecord
     time_as_seconds(end_time) - time_as_seconds(start_time)
   end
 
+  
+
+private
+
   def time_as_seconds(stringed_time)
     hours_as_seconds(stringed_time) + minutes_as_seconds(stringed_time)
   end

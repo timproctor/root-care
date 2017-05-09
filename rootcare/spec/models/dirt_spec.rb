@@ -39,9 +39,16 @@ RSpec.describe Dirt, type: :model do
     end_time   = trip.end_time
 
     change_in_time = trip.change_in_time(start_time, end_time)
-    byebug
-
     expect(change_in_time).to eq(1800)
+  end
+
+  it "can calculate #speed" do
+    driver = Driver.create!(driver_attributes(name: "dan"))
+    trip   = Dirt.create!(dirt_attributes(name: driver.name,
+                          start_time: "07:15", end_time: "07:45",
+                          distance: "17.3"))
+    mph = trip.speed
+    expect(mph).to eq(35)
   end
 
 
