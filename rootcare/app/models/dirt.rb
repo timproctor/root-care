@@ -14,15 +14,6 @@ class Dirt < ApplicationRecord
     (distance / change_in_time * 3600).round
   end
 
-  def total_trip_miles
-    collect_trip_miles.inject(:+).round
-  end
-
-
-  def average_speed
-    byebug
-
-  end
 private
 
   def time_as_seconds(stringed_time)
@@ -36,12 +27,5 @@ private
   def hours_as_seconds(stringed_time)
     stringed_time.split(":")[0].to_i * 3600
   end
-
-  def collect_trip_miles
-    dirts.map do |trip|
-      trip.distance.to_f
-    end
-  end
-
 
 end
