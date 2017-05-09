@@ -22,16 +22,5 @@ RSpec.describe Driver, type: :model do
     expect(driver.dirts).to include(trip2)
   end
 
-  it "finds #total_trip_miles for a driver" do
-    driver = Driver.create!(driver_attributes(name: "dan"))
-    trip1  = Dirt.create!(dirt_attributes(name: driver.name,
-                      start_time: "07:15", end_time: "07:45", distance: "17.3"))
-    trip2  = Dirt.create!(dirt_attributes(name: driver.name, start_time: "06:12",
-                      end_time: "06:32", distance: "21.8"))
-    
-    total_trip_miles = driver.total_trip_miles
-
-    expect(total_trip_miles).to eq(39)
-  end
 
 end
