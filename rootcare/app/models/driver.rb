@@ -6,10 +6,12 @@ class Driver < ApplicationRecord
     collect_trip_miles.inject(:+).round
   end
 
+
 private
   def collect_trip_miles
     dirts.map do |trip|
       trip.distance.to_f
     end
   end
+
 end

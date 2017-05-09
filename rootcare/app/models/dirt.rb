@@ -14,6 +14,10 @@ class Dirt < ApplicationRecord
     (distance / change_in_time * 3600).round
   end
 
+  def self.average_speed
+    byebug
+
+  end
 private
 
   def time_as_seconds(stringed_time)
@@ -27,4 +31,5 @@ private
   def hours_as_seconds(stringed_time)
     stringed_time.split(":")[0].to_i * 3600
   end
+
 end
