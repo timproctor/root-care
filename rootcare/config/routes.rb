@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "dirts#index"
+  get 'dirts', to: 'dirts#index'
 
   resources :drivers do
     resources :dirts

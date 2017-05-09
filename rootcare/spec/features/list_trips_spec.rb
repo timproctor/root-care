@@ -6,7 +6,7 @@ RSpec.feature "Drivers listed", :type => :feature do
   end
 
   scenario "A list of drivers" do
-    visit root_path
+    visit "dirts#index"
 
 
     expect(page).to have_text("Rex.")
