@@ -7,7 +7,12 @@ class Dirt < ApplicationRecord
     time_as_seconds(end_time) - time_as_seconds(start_time)
   end
 
-  
+  def speed(distance, start_time, end_time)
+    distance = distance.to_f
+    change_in_time = change_in_time(start_time, end_time)
+
+    (distance / change_in_time * 3600).to_f.ceil
+  end
 
 private
 
