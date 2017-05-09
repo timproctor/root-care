@@ -32,12 +32,12 @@ RSpec.describe Dirt, type: :model do
 
   it "can calculate #change_in_time" do
     driver = Driver.create!(driver_attributes(name: "dan"))
-    dirt   = Dirt.create!(dirt_attributes(name: driver.name
+    trip   = Dirt.create!(dirt_attributes(name: driver.name,
                           start_time: "07:15", end_time: "07:45",
                           distance: "17.3"))
-
-    change_in_time = dirt.change_in_time(end_time, start_time)
-    expect(change_in_time)to eq.(1800)
+    
+    change_in_time = dirt.change_in_time(trip.end_time, trip.start_time)
+    expect(change_in_time).to eq.(1800)
   end
 
 
