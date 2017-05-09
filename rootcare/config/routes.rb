@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "movies#index"
+  root "dirts#index"
 
   resources :drivers do
     resources :dirts
