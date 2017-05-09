@@ -30,10 +30,14 @@ RSpec.describe Dirt, type: :model do
     expect(dirt.errors[:distance].any?).to eq(true)
   end
 
-  it "can calculate change in time" do
-    seed_data
-    byebug
-    
+  it "can calculate #change_in_time" do
+    driver = Driver.create!(driver_attributes(name: "dan"))
+    dirt   = Dirt.create!(dirt_attributes(name: driver.name
+                          start_time: "07:15", end_time: "07:45",
+                          distance: "17.3"))
+
+    change_in_time = dirt.change_in_time(end_time, start_time)
+    expect(change_in_time)to eq.(1800)
   end
 
 
