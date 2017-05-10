@@ -13,7 +13,6 @@ class Driver < ApplicationRecord
     ((total_distance/total_rate)*3600).round
   end
 
-private
   def collect_trip_miles
     dirts.map do |trip|
       trip.distance.to_f
