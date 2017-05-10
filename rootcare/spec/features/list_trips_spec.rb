@@ -5,11 +5,18 @@ RSpec.feature "Drivers listed", :type => :feature do
     seed_data
   end
 
-  scenario "A list of drivers" do
+  scenario "A list of driver names" do
+
     visit "dirts#index"
 
-
     expect(page).to have_text("Rex")
-
   end
+
+  scenario "Driver's total miles" do
+    visit "dirts#index"
+
+    expect(page).to have_text("55 Miles")
+  end
+
+
 end
