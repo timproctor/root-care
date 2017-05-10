@@ -1,8 +1,11 @@
 class DirtsController < ApplicationController
   def index
-    byebug
+    @driver_store = Hash.new
     @drivers = Driver.all
-    @dirts = @drivers.map {|driver| driver.driver_id}
+    @drivers.each_with_index do |driver, dirts|
+      @driver_store[driver.id] = driver.dirts
+    end
+    @driver_store
   end
 
 

@@ -14,6 +14,7 @@ class Dirt < ApplicationRecord
     (distance / change_in_time * 3600).round
   end
 
+
 private
 
   def time_as_seconds(stringed_time)

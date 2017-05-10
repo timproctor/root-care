@@ -1,9 +1,9 @@
 <ul id="trips">
-  <% @trips.each do |driver| %>
+  <% @driver_store.each do |driver| %>
     <li>
       <article class="driver">
         <header>
-          <h2><%= driver.name %></h2>
+          <h2><%= show_name_of(driver) %></h2>
         </header>
         <p>
           <%= "to be created" %>

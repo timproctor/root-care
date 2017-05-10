@@ -9,7 +9,7 @@ RSpec.feature "Drivers listed", :type => :feature do
     visit "dirts#index"
 
 
-    expect(page).to have_text("Rex.")
+    expect(page).to have_text("Rex")
 
   end
 end
