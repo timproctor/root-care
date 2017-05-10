@@ -10,4 +10,9 @@ module DirtsHelper
   def the_driver(driver)
     Driver.find(driver.first)
   end
+
+  def drivers
+    byebug
+    @drivers
+  end
 end
