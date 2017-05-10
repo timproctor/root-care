@@ -4,7 +4,7 @@ module DirtsHelper
   end
 
   def show_total_miles_of(driver)
-    the_driver(driver).total_trip_miles.to_s
+    Driver.find(driver.first).total_trip_miles
   end
 
   def the_driver(driver)
@@ -12,7 +12,12 @@ module DirtsHelper
   end
 
   def drivers
-    byebug
-    @drivers
+    @driver_store = {}
+
+    @drivers.each_with_index do |driver, dirts|
+      @driver_store[driver.id] = driver.dirts
+    end
+
+    @driver_store
   end
 end
