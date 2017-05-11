@@ -3,7 +3,6 @@ class Driver < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   def total_trip_miles
-    byebug
     collect_trip_miles.round.to_s
   end
 

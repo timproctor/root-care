@@ -4,8 +4,15 @@ module DirtsHelper
   end
 
   def show_total_miles_of(driver)
-    byebug
     the_driver(driver).total_trip_miles
+  end
+
+  def discard_5_mph?(driver)
+    trips = driver.second
+    trips.drop_while do |trip|
+      speed = trip.speed(trip.distance, trip.start_time, trip.end_time)
+      speed < 5
+    end
   end
 
   def the_driver(driver)
