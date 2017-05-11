@@ -35,4 +35,12 @@ RSpec.feature "Drivers listed", :type => :feature do
 
     expect(page).not_to have_text("305 Miles")
   end
+
+  scenario "Sorted by driver with most miles driven" do
+    visit "dirts#index"
+
+    #todo make a within some kind of css have a text, make an order
+    expect(page).not_to have_text("305 Miles")
+  end
+
 end
