@@ -3,12 +3,13 @@ class Driver < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   def total_trip_miles
-    collect_trip_miles.round
+    byebug
+    collect_trip_miles.round.to_s
   end
 
   def average_speed
-    total_distance = collect_trip_miles.inject(:+)
-    total_rate = collect_trip_seconds.inject(:+)
+    total_distance = collect_trip_miles
+    total_rate = collect_trip_seconds
 
     ((total_distance/total_rate)*3600).round
   end
@@ -24,7 +25,7 @@ class Driver < ApplicationRecord
     dirts.map do |trip|
       seconds << trip.change_in_time(trip.start_time, trip.end_time)
     end
-    seconds
+    seconds.inject(:+)
   end
 
 end

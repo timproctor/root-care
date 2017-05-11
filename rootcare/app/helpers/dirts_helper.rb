@@ -4,7 +4,8 @@ module DirtsHelper
   end
 
   def show_total_miles_of(driver)
-    Driver.find(driver.first).total_trip_miles
+    byebug
+    the_driver(driver).total_trip_miles
   end
 
   def the_driver(driver)
