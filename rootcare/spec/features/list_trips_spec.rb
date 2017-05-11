@@ -30,7 +30,9 @@ RSpec.feature "Drivers listed", :type => :feature do
     expect(page).not_to have_text("Tim")
   end
 
+  scenario "Don't display trips more than 100 mph" do
+    visit "dirts#index"
 
-
-
+    expect(page).not_to have_text("305 Miles")
+  end
 end
