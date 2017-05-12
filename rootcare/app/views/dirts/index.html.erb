@@ -2,15 +2,18 @@
   <h2>Driver Trips</h2>
 </header>
 <table>
-  <tr>
-    <th>Driver's Name</th>
-    <th>Total Distance</th>
-    <th>Average Speed</th>
-  </tr>
-  <% drivers.each do |driver| %>
+    <tr>
+      <th>Driver's Name</th>
+      <th>Total Distance</th>
+      <th>Average Speed</th>
+    </tr>
+    <% drivers.each do |driver| %>
+    <tr></tr>
     <% discard_5_100_mph_for(driver) %>
-          <tr><td><%= show_name_of(driver) %></td></tr>
-          <tr><td><%= show_total_trip_miles_for(driver) %></td></tr>
-          <tr><td>future method for average speed</td></tr>
+    <tr>
+      <td><%= show_name_of(driver) %></td>
+      <td><%= show_total_trip_miles_for(driver) %></td>
+      <td>future numbers</td>
+    </tr>
   <% end %>
 </table>
