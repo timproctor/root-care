@@ -14,9 +14,13 @@ class Driver < ApplicationRecord
   end
 
   def collect_trip_miles
-    dirts.map do |trip|
-      trip.distance.to_f
-    end.inject(:+)
+    if dirts.empty?
+      0
+    else
+      dirts.map do |trip|
+        trip.distance.to_f
+      end.inject(:+)
+    end
   end
 
   def collect_trip_seconds
