@@ -25,6 +25,7 @@ class Driver < ApplicationRecord
 
   def collect_trip_seconds
     seconds = []
+    
     dirts.map do |trip|
       seconds << trip.change_in_time(trip.start_time, trip.end_time)
     end

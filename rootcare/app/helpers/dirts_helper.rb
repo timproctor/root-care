@@ -7,7 +7,11 @@ module DirtsHelper
     the_driver(driver).total_trip_miles
   end
 
-  def discard_5_100_mph?(driver)
+  def show_average_speed_for(driver)
+    the_driver(driver).average_speed
+  end
+
+  def discard_5_100_mph_for(driver)
     trips = driver.second
     trips.drop_while do |trip|
       speed = trip.speed(trip.distance, trip.start_time, trip.end_time)
