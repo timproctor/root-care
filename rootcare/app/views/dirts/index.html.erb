@@ -1,24 +1,16 @@
-<ul id="trips">
+<header>
+  <h2>Driver Trips</h2>
+</header>
+<table>
+  <tr>
+    <th>Driver's Name</th>
+    <th>Total Distance</th>
+    <th>Average Speed</th>
+  </tr>
   <% drivers.each do |driver| %>
     <% discard_5_100_mph_for(driver) %>
-    <li>
-      <article class="driver">
-        <header>
-          <h2>Driver Trips</h2>
-        </header>
-        <table>
-          <tr>
-            <th>Driver's Name</th>
-            <th>Total Distance</th>
-            <th>Average Speed</th>
-          </tr>
           <tr><td><%= show_name_of(driver) %></td></tr>
           <tr><td><%= show_total_trip_miles_for(driver) %></td></tr>
           <tr><td>future method for average speed</td></tr>
-        </table>
-        <footer>
-        </footer>
-      </article>
-    </li>
   <% end %>
-</ul>
+</table>
