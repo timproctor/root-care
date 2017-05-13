@@ -24,19 +24,19 @@ RSpec.feature "Drivers listed", :type => :feature do
     expect(page).to have_text("32 MPH")
   end
 
-  xscenario "Don't display trips less than 5mph" do
+  scenario "Don't display trips less than 5mph" do
     visit "dirts#index"
 
     expect(page).not_to have_text("Tim")
   end
 
-  xscenario "Don't display trips more than 100 mph" do
+  scenario "Don't display trips more than 100 mph" do
     visit "dirts#index"
 
     expect(page).not_to have_text("305 Miles")
   end
 
-  scenario "Sorted by driver with most miles driven" do
+  xscenario "Sorted by driver with most miles driven" do
     visit "dirts#index"
 
     expect(page).to have_text("td:first-child", text: "Emily")
