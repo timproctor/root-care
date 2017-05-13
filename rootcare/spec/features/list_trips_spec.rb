@@ -5,32 +5,32 @@ RSpec.feature "Drivers listed", :type => :feature do
     seed_data
   end
 
-  scenario "A list of driver names" do
+  xscenario "A list of driver names" do
 
     visit "dirts#index"
 
     expect(page).to have_text("Rex")
   end
 
-  scenario "Driver's total miles" do
+  xscenario "Driver's total miles" do
     visit "dirts#index"
 
     expect(page).to have_text("55 Miles")
   end
 
-  scenario "Driver's average speed for all his trips is displayed" do
+  xscenario "Driver's average speed for all his trips is displayed" do
     visit "dirts#index"
 
     expect(page).to have_text("32 MPH")
   end
 
-  scenario "Don't display trips less than 5mph" do
+  xscenario "Don't display trips less than 5mph" do
     visit "dirts#index"
 
     expect(page).not_to have_text("Tim")
   end
 
-  scenario "Don't display trips more than 100 mph" do
+  xscenario "Don't display trips more than 100 mph" do
     visit "dirts#index"
 
     expect(page).not_to have_text("305 Miles")
@@ -42,14 +42,14 @@ RSpec.feature "Drivers listed", :type => :feature do
     expect(page).to have_text("td:first-child", text: "Emily")
   end
 
-  scenario "Miles are rounded to the nearest integer" do
+  xscenario "Miles are rounded to the nearest integer" do
     visit "dirts#index"
 
     #todo make a within some kind of css have a text, make an order
     expect(page).not_to have_text("305 Miles")
   end
 
-  scenario "Speed is rouned to the nearest integer" do
+  xscenario "Speed is rouned to the nearest integer" do
     visit "dirts#index"
 
     #todo make a within some kind of css have a text, make an order
