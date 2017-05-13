@@ -16,12 +16,6 @@ module DirtsHelper
   end
 
   def drivers
-    @driver_store = {}
-
-    @drivers.each_with_index do |driver, dirts|
-      @driver_store[driver.id] = driver.dirts
-    end
-
-    @driver_store
+    @drivers
   end
 end

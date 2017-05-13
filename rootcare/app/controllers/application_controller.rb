@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     driver_store = {}
 
     drivers.each_with_index do |driver, dirts|
-      @driver_store[driver.id] = driver.dirts
+      driver_store[driver.id] = driver.dirts
     end
 
     driver_store
