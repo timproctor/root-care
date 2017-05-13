@@ -1,7 +1,7 @@
 class DirtsController < ApplicationController
-  before_action :drop_under_5_and_over_100mph
-  
+  before_action :get_all_drivers
+  before_action :filter_for_under_5_and_over_100
+
   def index
-    @drivers = Driver.all
   end
 end
