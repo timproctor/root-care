@@ -14,16 +14,7 @@ class Dirt < ApplicationRecord
     (distance / change_in_time * 3600).round
   end
 
-  def discard_under_5_and_over_100
-    byebug
-    trips = driver.second
-    trips.drop_while do |trip|
-      speed = trip.speed(trip.distance, trip.start_time, trip.end_time)
-      speed < 5 && speed > 100
-    end
-    byebug
-  end
-
+  
 private
 
   def time_as_seconds(stringed_time)
