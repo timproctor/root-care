@@ -13,15 +13,20 @@ class ApplicationController < ActionController::Base
     @driver_store
   end
 
-  def filter_for_under_5_and_over_100
-    @filtered = @driver_store.values.each do |trips|
-      trips.each do |trip|
-        speed = trip.speed(trip.distance, trip.start_time, trip.end_time)
-        if speed < 5 || speed > 100
-          trip.delete
-        end
-      end
-    end
-    @filtered
+  #def filter_for_under_5_and_over_100
+  #  @filtered = @driver_store.values.each do |trips|
+  #    trips.each do |trip|
+    #     speed = trip.speed(trip.distance, trip.start_time, trip.end_time)
+    #     if speed < 5 || speed > 100
+    #       trip.delete
+    #     end
+    #   end
+    # end
+    # @filtered
+  #end
+
+  def sort_by_speed
+    byebug
+    @store
   end
 end
