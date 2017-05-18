@@ -26,7 +26,6 @@ class ApplicationController < ActionController::Base
   #end
 
   def sort_by_speed
-    byebug
     store = @driver_store
 
     store.sort_by do |driver, dirts|

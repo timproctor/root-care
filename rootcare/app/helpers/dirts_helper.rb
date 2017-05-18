@@ -16,6 +16,6 @@ module DirtsHelper
   end
 
   def drivers
-    @filtered
+    @trips
   end
 end
