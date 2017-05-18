@@ -27,6 +27,12 @@ class ApplicationController < ActionController::Base
 
   def sort_by_speed
     byebug
-    
+    store = @driver_store
+
+    store.sort_by do |driver, dirts|
+      dirts.each do |dirt|
+        dirt.seed(dirt.distance, dirt.start_time, dirt.end_time)
+      end
+    end
   end
 end
