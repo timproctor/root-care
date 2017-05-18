@@ -27,6 +27,6 @@ class ApplicationController < ActionController::Base
 
   def sort_by_speed
     byebug
-    @store
+    
   end
 end
