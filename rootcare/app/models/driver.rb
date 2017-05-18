@@ -10,7 +10,7 @@ class Driver < ApplicationRecord
     total_distance = collect_trip_miles
     total_rate = collect_trip_seconds
 
-    ((total_distance/total_rate)*3600).try.round
+    ((try.total_distance/total_rate)*3600).round
   end
 
   def collect_trip_miles
