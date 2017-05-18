@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
 
     store.sort_by do |driver, dirts|
       dirts.each do |dirt|
-        dirt.seed(dirt.distance, dirt.start_time, dirt.end_time)
+        dirt.speed(dirt.distance, dirt.start_time, dirt.end_time)
       end
     end
   end
