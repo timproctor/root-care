@@ -10,16 +10,18 @@ class Driver < ApplicationRecord
     total_distance = collect_trip_miles
     total_rate = collect_trip_seconds
 
-    ((try.total_distance/total_rate)*3600).round
+    ((total_distance/total_rate)*3600).round
   end
 
   def collect_trip_miles
     if dirts.empty?
       0
     else
-      dirts.map do |trip|
-        trip.distance.to_f
-      end.inject(:+)
+      dirts.reject do |trip|
+        map do |trip|
+          trip.distance.to_f
+        end.inject(:+)
+      end
     end
   end
 
