@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     store = @driver_store
 
     store.sort_by do |driver, dirts|
-      Driver.find(driver).average_speed
+      Driver.find(driver).total_trip_miles
     end
   end
 end
