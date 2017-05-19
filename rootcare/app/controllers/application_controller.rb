@@ -29,9 +29,7 @@ class ApplicationController < ActionController::Base
     store = @driver_store
 
     store.sort_by do |driver, dirts|
-      dirts.each do |dirt|
-        dirt.speed(dirt.distance, dirt.start_time, dirt.end_time)
-      end
+      Driver.find(driver).average_speed
     end
   end
 end
