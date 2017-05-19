@@ -9,8 +9,12 @@ class Driver < ApplicationRecord
   def average_speed
     total_distance = collect_trip_miles
     total_rate = collect_trip_seconds
-
-    ((total_distance / total_rate) * 3600).round
+    if total_rate.nil?
+      0
+    else
+      speed = (total_distance / total_rate)
+      (speed * 3600).round
+    end
   end
 
   def collect_trip_miles
@@ -29,8 +33,7 @@ class Driver < ApplicationRecord
     dirts.map do |trip|
       seconds << trip.change_in_time(trip.start_time, trip.end_time)
     end
-    removed_nils = seconds.compact!
-    total_seconds = removed_nils.inject(:+)
+    seconds.inject(:+)
   end
 
 end
