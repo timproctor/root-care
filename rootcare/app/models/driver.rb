@@ -29,7 +29,8 @@ class Driver < ApplicationRecord
     dirts.map do |trip|
       seconds << trip.change_in_time(trip.start_time, trip.end_time)
     end
-    seconds.inject(:+)
+    removed_nils = seconds.compact!
+    total_seconds = removed_nils.inject(:+)
   end
 
 end
