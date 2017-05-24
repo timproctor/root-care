@@ -26,10 +26,10 @@ class ApplicationController < ActionController::Base
   #end
 
   def sort_by_speed
-    store = @driver_store
-
-    store.sort_by do |driver, dirts|
-      Driver.find(driver).total_trip_miles
+    # store = @driver_store
+    #
+    # store.sort_by do |driver, dirts|
+    #   Driver.find(driver).total_trip_miles
     end
   end
 end
