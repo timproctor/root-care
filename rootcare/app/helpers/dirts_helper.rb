@@ -4,7 +4,7 @@ module DirtsHelper
   end
 
   def show_total_trip_miles_for(driver)
-    
+    Driver.find(driver.first).total_trip_miles
   end
 
   def show_average_speed_for(driver)
