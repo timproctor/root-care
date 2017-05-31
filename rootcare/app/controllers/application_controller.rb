@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     store = @driver_store
 
     store.sort_by do |driver, dirts|
-      dirts.sort_by{|dirt| dirt.created_by  }
+      dirts.sort_by{|dirt| dirt.created_at  }
     end
   end
 end
