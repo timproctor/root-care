@@ -29,7 +29,9 @@ class ApplicationController < ActionController::Base
     store = @driver_store
 
     store.sort_by do |driver, dirts|
-      dirts.sort_by{|dirt| dirt.distance  }
+      dirts.each do |dirt|
+        dirt.distance
+      end
     end
   end
 end
