@@ -26,12 +26,13 @@ class ApplicationController < ActionController::Base
   #end
 
   def sort_by_total_trip_miles
-    store = @driver_store
-
-    store.sort_by do |driver, dirts|
-      dirts.each do |dirt|
-        dirt.distance
-      end
-    end
+    byebug
+    # store = @driver_store
+    #
+    # store.sort_by do |driver, dirts|
+    #   dirts.each do |dirt|
+    #     dirt.distance
+    #   end
+    # end
   end
 end
