@@ -12,7 +12,7 @@ module DirtsHelper
   end
 
   def the_driver(driver)
-    Driver.find(driver.first)
+    Driver.find(driver.driver_id)
   end
 
   def drivers

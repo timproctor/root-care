@@ -26,7 +26,6 @@ class ApplicationController < ActionController::Base
   #end
 
   def sort_by_total_trip_miles
-    byebug
     dirts = Dirt.all
     dirts.sort_by do |dirt|
       dirt.distance
