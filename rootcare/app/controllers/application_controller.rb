@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   def sort_by_total_trip_miles
     dirts = Dirt.all
     dirts.sort_by do |dirt|
-      dirt.distance
+      dirt
     end
     # store = @driver_store
     #
