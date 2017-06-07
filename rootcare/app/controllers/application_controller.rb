@@ -26,10 +26,8 @@ class ApplicationController < ActionController::Base
   #end
 
   def sort_by_total_trip_miles
-    dirts = Dirt.all
-    dirts.sort_by do |dirt|
-      dirt
-    end
+    @dirts = Dirt.all
+
     # store = @driver_store
     #
     # store.sort_by do |driver, dirts|
