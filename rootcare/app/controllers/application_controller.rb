@@ -24,7 +24,9 @@ class ApplicationController < ActionController::Base
     # end
     # @filtered
   #end
-
+  def get_dirts
+    @dirts = Dirt.all
+  end
   def sort_by_total_trip_miles
     @dirts = Dirt.all
 
