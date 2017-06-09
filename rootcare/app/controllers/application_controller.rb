@@ -2,12 +2,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 
-  def get_all_drivers
-    @drivers = Driver.all
+  def organize_filtered_by_driver
     @driver_store = {}
 
-    @drivers.each_with_index do |driver, dirts|
-      @driver_store[driver.id] = driver.dirts
+    filter_trips.each do |trip|
+      @driver_store[trip.driver_id] = trip
     end
 
     @driver_store
@@ -28,17 +27,22 @@ class ApplicationController < ActionController::Base
     @dirts = Dirt.all
   end
 
+  def filter_by_speed(trip)
+    speed = trip.speed(trip.distance, trip.start_time, trip.end_time)
+    speed > 5 && speed < 100
+  end
+
   def filter_trips
-    get_dirts.select! do |trip|
-      speed = trip.speed(trip.distance, trip.start_time, trip.end_time)
-      if speed > 5 && speed < 100
+    filtered_trips = []
+    get_dirts.select do |trip|
+      if filter_by_speed(trip)
+        filtered_trips << trip
       end
     end
   end
 
   def sort_by_total_trip_miles
-    filter_trips
-    byebug
+    organize_filtered_by_driver
     # store = @driver_store
     #
     # store.sort_by do |driver, dirts|
