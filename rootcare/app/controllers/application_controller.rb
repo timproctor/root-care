@@ -27,9 +27,18 @@ class ApplicationController < ActionController::Base
   def get_dirts
     @dirts = Dirt.all
   end
-  def sort_by_total_trip_miles
-    @dirts = Dirt.all
 
+  def filter_trips
+    get_dirts.select! do |trip|
+      speed = trip.speed(trip.distance, trip.start_time, trip.end_time)
+      if speed > 5 && speed < 100
+      end
+    end
+  end
+
+  def sort_by_total_trip_miles
+    filter_trips
+    byebug
     # store = @driver_store
     #
     # store.sort_by do |driver, dirts|
