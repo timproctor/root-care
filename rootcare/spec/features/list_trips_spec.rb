@@ -18,10 +18,12 @@ RSpec.feature "Drivers listed", :type => :feature do
     expect(page).to have_text("55 Miles")
   end
 
-  xscenario "Driver's average speed for all his trips is displayed" do
+  scenario "Driver's average speed for all his trips is displayed" do
     visit "dirts#index"
 
-    expect(page).to have_text("32 MPH")
+    within "tr:nth-child(2) td:nth-child(3)" do
+      expect(page).to have_text("32")
+    end
   end
 
   scenario "Don't display trips less than 5mph" do
