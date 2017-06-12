@@ -44,10 +44,11 @@ RSpec.feature "Drivers listed", :type => :feature do
     end
   end
 
-  xscenario "Miles are rounded to the nearest integer" do
+  scenario "Miles are rounded to the nearest integer" do
     visit "dirts#index"
 
-    expect(page).not_to have_text("305 Miles")
+    within "tr:nth-child(2) td:nth-child(2)"
+    expect(page).to have_text("32")
   end
 
   xscenario "Speed is rouned to the nearest integer" do
