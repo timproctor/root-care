@@ -36,23 +36,23 @@ RSpec.feature "Drivers listed", :type => :feature do
     expect(page).not_to have_text("305 Miles")
   end
 
-  xscenario "Sorted by driver with most miles driven" do
+  scenario "Sorted by driver with most miles driven" do
     visit "dirts#index"
 
-    expect(page).to have_text("td:first-child", text: "Emily")
+    within "tr:nth-child(2) td:nth-child(1)" do
+      expect(page).to have_text("Rex")
+    end
   end
 
   xscenario "Miles are rounded to the nearest integer" do
     visit "dirts#index"
 
-    #todo make a within some kind of css have a text, make an order
     expect(page).not_to have_text("305 Miles")
   end
 
   xscenario "Speed is rouned to the nearest integer" do
     visit "dirts#index"
 
-    #todo make a within some kind of css have a text, make an order
     expect(page).not_to have_text("305 Miles")
   end
 
