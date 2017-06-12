@@ -5,24 +5,26 @@ RSpec.feature "Drivers listed", :type => :feature do
     seed_data
   end
 
-  xscenario "A list of driver names" do
+  scenario "A list of driver names" do
 
     visit "dirts#index"
-
-    expect(page).to have_text("Rex")
+    within "tr:nth-child(1) th:nth-child(1)" do
+      expect(page).to have_text("Driver's Name")
+    end
   end
 
-  xscenario "Driver's total miles" do
+  scenario "Driver's total miles" do
     visit "dirts#index"
-
-    expect(page).to have_text("55 Miles")
+    within "tr:nth-child(1) th:nth-child(2)" do
+      expect(page).to have_text("Total Distance")
+    end
   end
 
   scenario "Driver's average speed for all his trips is displayed" do
     visit "dirts#index"
 
-    within "tr:nth-child(2) td:nth-child(3)" do
-      expect(page).to have_text("32")
+    within "tr:nth-child(1) th:nth-child(3)" do
+      expect(page).to have_text("Average Speed")
     end
   end
 
