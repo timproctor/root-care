@@ -64,4 +64,13 @@ RSpec.feature "Drivers listed", :type => :feature do
     end
   end
 
+  scenario "Drivers without dirts are given 0 miles under total distance" do
+    visit "dirts#index"
+
+    within "tr:nth-child(6) td:nth-child(1)" do
+      expect(page).to have_text("Mark")
+    end
+  end
+
+
 end
