@@ -30,7 +30,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def sort_filter_by_most_trip_miles
+    byebug
+  end
   def sort_by_total_trip_miles
-    organize_filtered_by_driver
+    sort_filter_by_most_trip_miles
   end
 end
