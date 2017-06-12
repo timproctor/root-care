@@ -8,7 +8,7 @@ module DirtsHelper
   end
 
   def show_average_speed_for(driver)
-
+    the_driver(driver).average_speed
   end
 
   def the_driver(driver)
