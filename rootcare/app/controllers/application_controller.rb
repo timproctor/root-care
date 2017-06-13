@@ -21,6 +21,10 @@ class ApplicationController < ActionController::Base
     speed > 5 && speed < 100
   end
 
+  def filter_by_0_distance
+    byebug
+  end
+
   def filter_trips
     filtered_trips = []
     get_dirts.select do |trip|
@@ -39,5 +43,6 @@ class ApplicationController < ActionController::Base
 
   def sort_by_total_trip_miles
     sort_filter_by_most_trip_miles
+    filter_by_0_distance
   end
 end
