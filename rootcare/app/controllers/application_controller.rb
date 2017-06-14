@@ -28,6 +28,7 @@ class ApplicationController < ActionController::Base
     drivers.map do |driver|
       driver if filtered_trips_stringify.include?(driver.id.to_s) == false
     end.compact
+    byebug
   end
 
   def filter_trips
@@ -37,9 +38,6 @@ class ApplicationController < ActionController::Base
         @filtered_trips << trip
       end
     end
-
-    filter_by_0_distance
-    byebug
   end
 
   def sort_filter_by_most_trip_miles
