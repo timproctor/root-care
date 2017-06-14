@@ -22,16 +22,24 @@ class ApplicationController < ActionController::Base
   end
 
   def filter_by_0_distance
-    byebug
+    drivers = Driver.all
+    filtered_trips_stringify = @filtered_trips.map{|trip| (trip.driver_id).inspect }
+
+    drivers.map do |driver|
+      driver if filtered_trips_stringify.include?(driver.id.to_s) == false
+    end.compact
   end
 
   def filter_trips
-    filtered_trips = []
+    @filtered_trips = []
     get_dirts.select do |trip|
       if filter_by_speed(trip)
-        filtered_trips << trip
+        @filtered_trips << trip
       end
     end
+
+    filter_by_0_distance
+    byebug
   end
 
   def sort_filter_by_most_trip_miles
@@ -43,6 +51,5 @@ class ApplicationController < ActionController::Base
 
   def sort_by_total_trip_miles
     sort_filter_by_most_trip_miles
-    filter_by_0_distance
   end
 end
