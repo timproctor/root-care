@@ -1,21 +1,25 @@
 module DirtsHelper
-  def show_name_of(driver)
-    the_driver(driver).name.capitalize
+  def show_name_of(trip)
+    the_driver(trip).name.capitalize
   end
 
-  def show_total_trip_miles_for(driver)
-    the_driver(driver).total_trip_miles
+  def show_total_trip_miles_for(trip)
+    the_driver(trip).total_trip_miles
   end
 
-  def show_average_speed_for(driver)
-    the_driver(driver).average_speed
+  def show_average_speed_for(trip)
+    the_driver(trip).average_speed
   end
 
-  def the_driver(driver)
+  def the_driver(trip)
     Driver.find(driver.driver_id)
   end
 
-  def drivers
+  def trips
     @trips
+  end
+
+  def drivers
+    @drivers
   end
 end

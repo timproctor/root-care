@@ -7,11 +7,11 @@
       <th>Total Distance</th>
       <th>Average Speed</th>
     </tr>
-    <% drivers.each do |driver| %>
+    <% trips.each do |trip| %>
     <tr>
-      <td><%= show_name_of(driver) %></td>
-      <td><%= show_total_trip_miles_for(driver)%> miles</td>
-      <td><%= show_average_speed_for(driver)%> miles</td>
+      <td><%= show_name_of(trip) %></td>
+      <td><%= show_total_trip_miles_for(trip)%> miles</td>
+      <td><%= show_average_speed_for(trip)%> miles</td>
     </tr>
   <% end %>
 </table>
