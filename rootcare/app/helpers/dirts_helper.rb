@@ -1,5 +1,5 @@
 module DirtsHelper
-  def show_name_of(trip)
+  def show_name_of_driver_id(trip)
     the_driver(trip).name.capitalize
   end
 
@@ -12,7 +12,7 @@ module DirtsHelper
   end
 
   def the_driver(trip)
-    Driver.find(driver.driver_id)
+    Driver.find(trip.driver_id)
   end
 
   def trips
