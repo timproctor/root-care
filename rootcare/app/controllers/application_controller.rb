@@ -21,14 +21,6 @@ class ApplicationController < ActionController::Base
     speed > 5 && speed < 100
   end
 
-  def filter_by_0_distance
-    drivers = Driver.all
-    filtered_trips_stringify = @filtered_trips.map{|trip| (trip.driver_id).inspect }
-
-    drivers.map do |driver|
-      driver if filtered_trips_stringify.include?(driver.id.to_s) == false
-    end.compact
-  end
 
   def filter_trips
     @filtered_trips = []
@@ -37,6 +29,16 @@ class ApplicationController < ActionController::Base
         @filtered_trips << trip
       end
     end
+  end
+
+  def filter_by_0_distance
+    drivers = Driver.all
+    filtered_trips_stringify = @filtered_trips.map{|trip| (trip.driver_id).inspect }
+
+    drivers.map do |driver|
+      driver if filtered_trips_stringify.include?(driver.id.to_s) == false
+    end.compact
+
   end
 
   def sort_filter_by_most_trip_miles
