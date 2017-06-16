@@ -6,7 +6,6 @@ RSpec.feature "Drivers listed", :type => :feature do
   end
 
   scenario "A list of driver names" do
-
     visit "dirts#index"
     within "tr:nth-child(1) th:nth-child(1)" do
       expect(page).to have_text("Driver's Name")

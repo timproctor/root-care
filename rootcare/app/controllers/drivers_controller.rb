@@ -1,6 +1,5 @@
 class DriversController < ApplicationController
   def index
-    byebug
   end
   def new
     @driver = Driver.new
