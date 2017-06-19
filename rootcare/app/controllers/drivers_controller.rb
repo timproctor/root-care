@@ -1,6 +1,8 @@
 class DriversController < ApplicationController
   def index
+    @drivers = filter_by_0_distance
   end
+  
   def new
     @driver = Driver.new
   end

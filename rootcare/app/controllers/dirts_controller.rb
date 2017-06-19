@@ -3,6 +3,5 @@ class DirtsController < ApplicationController
 
   def index
     @trips = sort_by_total_trip_miles
-    @drivers = filter_by_0_distance
   end
 end
