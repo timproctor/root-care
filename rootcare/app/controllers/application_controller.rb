@@ -32,6 +32,10 @@ class ApplicationController < ActionController::Base
   end
 
   def filter_by_0_distance
+    filter_for_0_distance.sort_by{|driver| driver.name}
+  end
+
+  def filter_for_0_distance
     drivers = Driver.all
     filtered_trips_stringify = @filtered_trips.map{|trip| (trip.driver_id).inspect }
 
