@@ -24,6 +24,6 @@ module DirtsHelper
   end
 
   def drivers
-    @drivers
+    Driver.drivers
   end
 end

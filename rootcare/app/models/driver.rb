@@ -2,6 +2,10 @@ class Driver < ApplicationRecord
   has_many :dirts
   validates :name, presence: true, uniqueness: true
 
+  def self.drivers
+    filter_by_0_distance
+  end
+
   def total_trip_miles
     collect_trip_miles.round.to_s
   end
