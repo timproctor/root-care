@@ -23,7 +23,4 @@ module DirtsHelper
     @trips
   end
 
-  def drivers
-    Driver.drivers
-  end
 end

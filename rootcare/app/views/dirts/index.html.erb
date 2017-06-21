@@ -14,7 +14,7 @@
         <td><%= show_average_speed_for(trip)%> miles</td>
       </tr>
     <% end %>
-    <% drivers.each do |driver| %>
+    <% filter_by_0_distance.each do |driver| %>
       <tr>
         <td><%= show_name_of(driver) %></td>
         <td>0 miles</td>
