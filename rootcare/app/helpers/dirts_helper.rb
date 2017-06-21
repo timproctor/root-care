@@ -23,4 +23,8 @@ module DirtsHelper
     @trips
   end
 
+  def drivers
+    filter_by_0_distance
+  end
+
 end
