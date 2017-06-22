@@ -5,7 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-@get_data = File.open("db/sample_data/driver_and_trip_data.prn", "r") do |datafile|
+
+@get_data = File.open("trip_data/input.prn", "r") do |datafile|
               datafile.readlines
             end
 
