@@ -1,3 +1,4 @@
+# Loading Solution in localhost
 
 # TDD first
 Sometimes as programmers, we like to add constraints to a challenge. For example,
@@ -48,5 +49,13 @@ The Dirt controller gets it's index action by picking out all the eligible trips
 then that info becomes a driver-trips hash and then is passed to the index template.
 
 My goal was to keep the controllers as lean as I could. The Application controllers
-contains the bulk of the filtering and parsing to display the only the trip info
-that should be displayed.
+contains the bulk of the filtering and parsing methods to display only the trip info
+that should be displayed. When a driver has trip data thrown out, I still
+wanted to make sure the Driver shows in the Index in alphabetical order with
+this little method:
+
+```Ruby
+  def filter_by_0_distance
+    filter_for_0_distance.sort_by{|driver| driver.name}
+  end
+```
