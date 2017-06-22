@@ -1,5 +1,3 @@
-# Loading Solution in localhost
-
 # TDD first
 Sometimes as programmers, we like to add constraints to a challenge. For example,
 this particular challenge, I wanted to construct the solution using as pure a TDD
