@@ -38,7 +38,7 @@ and I didn't add any UI/UX. I wanted to stick to as blank slate a look as possib
 I imagine showing the index as a Proof Of Concept perhaps in which the client
 would add a bunch of front-end design features at that point.
 
-# Conrollers
+# Controllers
 The Driver controller handles creating new drivers, and the index is based on
 filtering the drivers by those that have 0 miles. I wanted to make sure that if a
 driver has speeds under 5 or over 100 or no miles that they are still displayed
