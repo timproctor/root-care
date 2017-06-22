@@ -25,7 +25,7 @@ There are two models. The `Driver` model can have many 'Dirts', which is a play 
 the formula for distance, `d = rate * time`, I added a vowel between the `d` and `r`
 to get the word `Dirt`. I also refer to the `Dirt` model as a Trip. I probably
 should have just called it a Trip but to me a trip means you go somewhere, stay
-and then come back. I think there could be a 'Trip' model in the future that
+and then come back. I think there could be a Trip model in the future that
 might incorporate destinations, so for now this solution only needs the `Dirt`
 information.
 
