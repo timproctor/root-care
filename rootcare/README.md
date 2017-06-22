@@ -26,10 +26,10 @@ the formula for distance, `d = rate * time`, I added a vowel between the `d` and
 to get the word `Dirt`. I also refer to the `Dirt` model as a Trip. I probably
 should have just called it a Trip but to me a trip means you go somewhere, stay
 and then come back. I think there could be a 'Trip' model in the future that
-might incorporate destinations, so for now this solution only needs the 'Dirt'
+might incorporate destinations, so for now this solution only needs the `Dirt`
 information.
 
-The `Dirt` has methods that calculate change in time and rate. The 'Driver' has
+The `Dirt` has methods that calculate change in time and rate. The `Driver` has
 methods that calculate total miles a driver drives and their average speeds.
 
 # View
